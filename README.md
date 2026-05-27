@@ -12,14 +12,16 @@ Add the plugin to your homeos repository:
 homeos plugin add mise
 ```
 
-Create a package using this plugin (depend on your `mise` package so it is installed first):
+Create a package using this plugin:
 
 ```sh
-homeos package add java-temurin25 --plugin mise --param tool=java@temurin-25 --depends-on mise
-homeos package add ripgrep --plugin mise --param tool=cargo:ripgrep@latest --depends-on mise
+homeos package add java-temurin25 --plugin mise --param tool=java@temurin-25
+homeos package add ripgrep --plugin mise --param tool=cargo:ripgrep@latest
 ```
 
-The homeos package name is a human-friendly slug you choose (e.g. `java-temurin25`); the full mise spec — including characters like `@` and `:` — goes in the `tool` parameter.
+The homeos package name is a human-friendly slug you choose (e.g. `java-temurin25`); the full mise tool spec — including characters like `@` and `:` — goes in the `tool` parameter.
+
+These scripts call `mise`, so it must already be installed. Whether you manage mise itself with homeos is up to you; if you do, add `--depends-on mise` so homeos installs it before these tools.
 
 ## Parameters
 
