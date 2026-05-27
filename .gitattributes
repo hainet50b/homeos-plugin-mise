@@ -1,2 +1,1 @@
-# Template files render into shell scripts; keep LF so .sh.tmpl works on Unix.
-*.tmpl text eol=lf
+* text=auto eol=lf
